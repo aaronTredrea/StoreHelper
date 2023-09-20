@@ -230,7 +230,7 @@ public class StoreHelper: ObservableObject {
     }
     
     public func updateProductIds(productIds: OrderedSet<ProductId>) {
-        if self.productIds = nil {
+        if self.productIds == nil {
             self.productIds = productIds
         } else {
             self.productIds?.append(contentsOf: productIds)
