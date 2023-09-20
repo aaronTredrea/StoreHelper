@@ -225,12 +225,16 @@ public class StoreHelper: ObservableObject {
         purchasedProductsFallback = readPurchasedProductsFallbackList()
     }
     
-    public func setProductIds(productIds: OrderedSet<ProductId>){
+    public func setProductIds(productIds: OrderedSet<ProductId>) {
         self.productIds = productIds
     }
     
-    public func updateProductIds(productIds: OrderedSet<ProductId>){
-        self.productIds.append(contentsOf: productIds)
+    public func updateProductIds(productIds: OrderedSet<ProductId>) {
+        if self.productIds = nil {
+            self.productIds = productIds
+        } else {
+            self.productIds?.append(contentsOf: productIds)
+        }
     }
     
     deinit { transactionListener?.cancel() }
