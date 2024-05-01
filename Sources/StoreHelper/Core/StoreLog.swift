@@ -99,15 +99,15 @@ public struct StoreLog {
     }
     
     private static func logEvent(_ event: StoreNotification) {
-        #if DEBUG
-        var doLog = true
-        if event.isNotificationPurchaseState(), !logIsPurchasedEvents { doLog = false }
-        if doLog { print(event.shortDescription()) }
-        #else
-        var doLog = true
-        if event.isNotificationPurchaseState(), !logIsPurchasedEvents { doLog = false }
-        if doLog { os_log("%{public}s", log: storeLog, type: .default, event.shortDescription()) }
-        #endif
+//        #if DEBUG
+//        var doLog = true
+//        if event.isNotificationPurchaseState(), !logIsPurchasedEvents { doLog = false }
+//        if doLog { print(event.shortDescription()) }
+//        #else
+//        var doLog = true
+//        if event.isNotificationPurchaseState(), !logIsPurchasedEvents { doLog = false }
+//        if doLog { os_log("%{public}s", log: storeLog, type: .default, event.shortDescription()) }
+//        #endif
     }
     
     private static func logEvent(_ event: StoreNotification, productId: ProductId, transactionId: String? = nil) {
