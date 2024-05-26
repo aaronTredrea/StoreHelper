@@ -99,7 +99,10 @@ public struct ConsumableView: View {
             Task.init {
                 await purchaseState(for: productId)
                 count = KeychainHelper.count(for: productId)
+#if os(visionOS)
+#else
                 WidgetCenter.shared.reloadAllTimelines()
+#endif
             }
         }
     }

@@ -99,7 +99,10 @@ public struct ProductView: View {
         .onChange(of: storeHelper.purchasedProducts) { _ in
             Task.init {
                 await purchaseState(for: productId)
+#if os(visionOS)
+#else
                 WidgetCenter.shared.reloadAllTimelines()
+#endif
             }
         }
     }
