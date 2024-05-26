@@ -11,7 +11,9 @@
 
 import SwiftUI
 import StoreKit
+#if os(visionOS)
 import WidgetKit
+#endif
 
 /// Displays a single row of product information for the main content List.
 @available(iOS 15.0, macOS 12.0, *)
