@@ -11,7 +11,8 @@
 
 import SwiftUI
 import StoreKit
-#if !os(visionOS)
+#if os(visionOS)
+#else
 import WidgetKit
 #endif
 
