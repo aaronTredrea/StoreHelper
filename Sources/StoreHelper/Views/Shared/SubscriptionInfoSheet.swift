@@ -29,8 +29,8 @@ public struct SubscriptionInfoSheet: View {
     
     public var body: some View {
         VStack {
-            SheetBarView(showSheet: $showPurchaseInfoSheet, title: "Subscription Information", sysImage: "creditcard.circle")
-            
+//            SheetBarView(showSheet: $showPurchaseInfoSheet, title: "Subscription Information", sysImage: "creditcard.circle")
+//            
             Image(productId)
                 .resizable()
                 .frame(maxWidth: 85, maxHeight: 85)

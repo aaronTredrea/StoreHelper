@@ -47,3 +47,32 @@ public extension Image {
     }
 }
 #endif
+
+
+//
+//  BodyImage.swift
+//  StoreHelper
+//
+//  Created by Russell Archer on 20/12/2021.
+//
+
+import SwiftUI
+
+#if os(visionOS)
+@available(iOS 15.0, *)
+public extension Image {
+    func bodyImage() -> some View {
+        self
+    }
+    
+    func bodyImageNotRounded() -> some View {
+        self
+    }
+}
+
+public struct SheetBarView: View {
+    public var body: some View {
+        EmptyView()
+    }
+}
+#endif

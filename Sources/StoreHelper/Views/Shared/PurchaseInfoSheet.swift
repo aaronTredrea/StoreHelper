@@ -48,8 +48,9 @@ public struct PurchaseInfoSheet: View {
     
     public var body: some View {
         VStack {
-            SheetBarView(showSheet: $showPurchaseInfoSheet, title: "Purchase Information", sysImage: "creditcard.circle")
-            
+//            
+//            SheetBarView(showSheet: $showPurchaseInfoSheet, title: "Purchase Information", sysImage: "creditcard.circle")
+//            
             Image(productId)
                 .resizable()
                 .frame(maxWidth: 85, maxHeight: 85)
@@ -98,7 +99,7 @@ public struct PurchaseInfoSheet: View {
                         Button(action: {
                             if  let sRefundUrl = Configuration.requestRefundUrl.stringValue(storeHelper: storeHelper),
                                 let refundUrl = URL(string: sRefundUrl) {
-                                NSWorkspace.shared.open(refundUrl)
+                                //NSWorkspace.shared.open(refundUrl)
                             }
                         }) { Label("Request Refund", systemImage: "creditcard.circle")}
                             .xPlatformButtonStyleBorderedProminent()

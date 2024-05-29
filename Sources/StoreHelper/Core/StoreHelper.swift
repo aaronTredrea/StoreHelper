@@ -502,7 +502,12 @@ public class StoreHelper: ObservableObject {
 
         let result: Product.PurchaseResult
         do {
+#if os(visionOS)
+            let windowScene = UIApplication.shared.connectedScenes.first
+        result = try await product.purchase(confirmIn: windowScene!)
+#else
             result = try await product.purchase(options: options)
+#endif
         } catch {
             purchaseState = .failed
             StoreLog.event(.purchaseFailure, productId: product.id)
